@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useReveal } from "@/hooks/useReveal";
 
 const STEPS = [
@@ -13,8 +13,6 @@ export default function Bridgehead() {
   const { ref, visible } = useReveal();
   const [step, setStep] = useState(0);
   const [values, setValues] = useState({ focus: "", stage: "", email: "", phone: "" });
-  const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
 
   const update = (field, val) => setValues((s) => ({ ...s, [field]: val }));
 
@@ -23,16 +21,12 @@ export default function Bridgehead() {
 
   const canAdvance = !!values[STEPS[step].field];
 
-  const submit = async (e) => {
+  const submit = (e) => {
     e.preventDefault();
     if (!canAdvance) return;
-    setSubmitting(true);
-    try {
-      await Promise.resolve();
-      setSubmitted(true);
-    } finally {
-      setSubmitting(false);
-    }
+    const subject = encodeURIComponent("Strategic consultation inquiry");
+    const body = encodeURIComponent(`Focus: ${values.focus}\nStage: ${values.stage}\nEmail: ${values.email}\nPhone: ${values.phone}`);
+    window.location.href = `mailto:acbridgeinfo@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -61,7 +55,7 @@ export default function Bridgehead() {
                 there.
               </p>
               <address className="mt-8 not-italic font-tight text-[11px] uppercase tracking-[0.18em] text-white/50 leading-relaxed">
-                27 Tottenham Street<br />London W1T 4RW, United Kingdom
+                Grigoriou Xenopoulou, 5A<br />EASTERN PEARL PROJECT, HOUSE 7<br />Pareklisia, 4520, Limassol, Cyprus<br /><a href="mailto:acbridgeinfo@gmail.com">acbridgeinfo@gmail.com</a>
               </address>
             </div>
 
@@ -79,21 +73,7 @@ export default function Bridgehead() {
           {/* Right — multi-step diagnostic form */}
           <div className="col-span-12 md:col-span-6">
             <div className="border border-white/15 rounded-sm p-8 md:p-10 bg-white/[0.02]">
-              {submitted ? (
-                <div className="flex flex-col items-start gap-6 py-10">
-                  <span className="w-12 h-12 rounded-full ochre-bg flex items-center justify-center text-[#121417]">
-                    <Check className="w-5 h-5" />
-                  </span>
-                  <h3 className="font-serif-display text-3xl md:text-4xl">
-                    Your inquiry is received.
-                  </h3>
-                  <p className="text-[1.0625rem] leading-[1.7] text-white/60 max-w-sm">
-                    An advisor will reach out within two business days to begin mapping
-                    your strategic connections.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={submit}>
+              <form onSubmit={submit}>
                   {/* Step indicator */}
                   <div className="flex items-center gap-3 mb-10 flex-wrap">
                     {STEPS.map((s, i) => (
@@ -171,10 +151,10 @@ export default function Bridgehead() {
                     ) : (
                       <button
                         type="submit"
-                        disabled={submitting || !canAdvance}
+                        disabled={!canAdvance}
                         className="group inline-flex items-center gap-3 font-tight text-[11px] uppercase tracking-[0.18em] text-white disabled:opacity-50"
                       >
-                        {submitting ? "Sending…" : "Submit Inquiry"}
+                        Open Email Draft
                         <span className="w-8 h-8 rounded-full ochre-bg flex items-center justify-center text-[#121417] group-hover:translate-x-1 transition-transform">
                           <ArrowRight className="w-4 h-4" />
                         </span>
@@ -182,7 +162,7 @@ export default function Bridgehead() {
                     )}
                   </div>
                 </form>
-              )}
+              <p className="mt-5 text-xs text-white/50">Your email app will open with these details. Send the email there to contact us.</p>
             </div>
           </div>
         </div>

@@ -22,19 +22,9 @@ Open the local URL printed by Vite in your browser.
 npm run build
 ```
 
-## Environment variables
-
-Create a local `.env.local` file if you need app-specific values:
-
-```bash
-VITE_APP_ID=local-app
-VITE_APP_BASE_URL=
-VITE_FUNCTIONS_VERSION=v1
-```
-
 ## Notes
 
-This project is configured as a plain React app without external platform SDK dependencies.
+The consultation form opens an email draft. Visitors must send that email from their email app; the site has no submission backend.
 
 ## Contact
 

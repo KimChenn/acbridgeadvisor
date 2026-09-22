@@ -143,7 +143,7 @@ export default function Navbar() {
               <div className="flex flex-col gap-3">
                 {[
                   { city: "New York", tz: "America/New_York" },
-                  { city: "London", tz: "Europe/London" },
+                  { city: "Limassol", tz: "Asia/Nicosia" },
                   { city: "Tokyo", tz: "Asia/Tokyo" },
                 ].map((c) => (
                   <div key={c.city} className="flex items-center gap-6">
@@ -165,7 +165,7 @@ export default function Navbar() {
               The Strategic Conduit
             </span>
             <span className="font-tight text-[10px] uppercase tracking-[0.22em] text-white/40">
-              © {new Date().getFullYear()} AC Bridge Advisors
+              © 2025 AC BRIDGE ADVISORS LIMITED
             </span>
           </div>
         </div>

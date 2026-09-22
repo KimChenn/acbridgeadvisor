@@ -23,7 +23,13 @@ export default function Footer() {
               drive growth, innovation, and impactful collaboration.
             </p>
             <address className="mt-6 not-italic font-tight text-[11px] uppercase tracking-[0.18em] text-white/50 leading-relaxed">
-              27 Tottenham Street<br />London W1T 4RW, United Kingdom
+              AC BRIDGE ADVISORS LIMITED<br />
+              Grigoriou Xenopoulou, 5A<br />
+              EASTERN PEARL PROJECT, HOUSE 7<br />
+              Pareklisia, 4520, Limassol, Cyprus<br />
+              VAT number: 60330052P<br />
+              Reg number: HE 484767<br />
+              Established December 2025
             </address>
           </div>
 
@@ -51,8 +57,8 @@ export default function Footer() {
             </p>
             <ul className="flex flex-col gap-3">
               <li>
-                <a href="mailto:hello@acbridgeadvisors.com" className="font-tight text-[12px] uppercase tracking-[0.14em] text-white/60 hover:text-[#C59D5F] transition-colors">
-                  hello@acbridgeadvisors.com
+                <a href="mailto:acbridgeinfo@gmail.com" className="font-tight text-[12px] uppercase tracking-[0.14em] text-white/60 hover:text-[#C59D5F] transition-colors">
+                  acbridgeinfo@gmail.com
                 </a>
               </li>
               <li>
@@ -66,7 +72,7 @@ export default function Footer() {
 
         <div className="mt-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-white/10 pt-6">
           <span className="font-tight text-[10px] uppercase tracking-[0.22em] text-white/35">
-            © {new Date().getFullYear()} AC Bridge Advisors — The Structural Flow
+            © 2025 AC BRIDGE ADVISORS LIMITED — The Structural Flow
           </span>
           <span className="font-tight text-[10px] uppercase tracking-[0.22em] text-white/35">
             Customer Relations · B2B Business Connections
