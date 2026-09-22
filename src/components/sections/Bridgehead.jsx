@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
 import { useReveal } from "@/hooks/useReveal";
-import { base44 } from "@/api/base44Client";
 
 const STEPS = [
   { id: 1, label: "Your Focus", field: "focus", placeholder: "e.g. Strategic partnership in fintech", type: "text" },
@@ -29,12 +28,7 @@ export default function Bridgehead() {
     if (!canAdvance) return;
     setSubmitting(true);
     try {
-      await base44.entities.Inquiry.create({
-        focus: values.focus,
-        stage: values.stage,
-        email: values.email,
-        phone: values.phone,
-      });
+      await Promise.resolve();
       setSubmitted(true);
     } finally {
       setSubmitting(false);

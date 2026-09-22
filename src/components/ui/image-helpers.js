@@ -1,5 +1,5 @@
 const WIX_MEDIA_HOSTS = {
-  "media.base44.com": "/images/public/",
+  "images.unsplash.com": "/images/",
   "static.wixstatic.com": "/media/",
 }
 

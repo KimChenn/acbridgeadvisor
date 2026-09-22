@@ -5,12 +5,11 @@ import { ShieldCheck, Loader2 } from "lucide-react";
 import AuthLayout from "@/components/AuthLayout";
 
 // App-side OAuth consent page for the app's MCP server. The platform redirects
-// AI clients here (see base44/mcp/config.json `consent_path`) with an opaque
-// `ctx` handle — the authorization request itself lives on the server. This page
-// gates on the app-user session, fetches the display info for that handle, shows
-// the categories of access being granted, and posts the approve/deny decision.
-// Do not change the fetch calls, headers, or the `ctx` handle handling — styling
-// and copy are safe to edit.
+// AI clients here with an opaque `ctx` handle — the authorization request itself
+// lives on the server. This page gates on the app-user session, fetches the
+// display info for that handle, shows the categories of access being granted,
+// and posts the approve/deny decision. Do not change the fetch calls, headers,
+// or the `ctx` handle handling — styling and copy are safe to edit.
 export default function OAuthConsent() {
   const ctx = new URLSearchParams(window.location.search).get("ctx");
   const [info, setInfo] = useState(null);
@@ -45,12 +44,11 @@ export default function OAuthConsent() {
           return;
         }
         const data = await res.json();
-        // Gate on the server's auth result, NOT base44.auth.isAuthenticated():
-        // the SDK check runs the bearer path, so a cookie-only session (platform
-        // login/SSO, or a private app with a stale localStorage token) would read
-        // as signed-out and redirect — even though /consent-info just
-        // authenticated this same request via its cookie fallback. data.authenticated
-        // keeps the redirect decision in agreement with what the server returned.
+        // Gate on the server's auth result, not a local client-only auth check: the
+        // server can authenticate the same request via cookie fallback while a stale
+        // client token or a cookie-only session would otherwise read as signed-out.
+        // data.authenticated keeps the redirect decision aligned with what the server
+        // returned.
         if (!data.authenticated) {
           // The short handle rides back in returnTo; login_path is
           // owner-configured and validated server-side as a same-origin path.

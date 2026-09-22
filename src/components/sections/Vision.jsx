@@ -1,7 +1,7 @@
 import { Image } from "@/components/ui/image";
 import { useReveal } from "@/hooks/useReveal";
 
-const VISION_IMG = "https://media.base44.com/images/public/6a7d70aea68c2c50dc698df1/195e74d07_generated_7adb8322.png";
+const VISION_IMG = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80";
 
 const PILLARS = [
   { k: "Relationships", v: "as the driving force behind growth" },

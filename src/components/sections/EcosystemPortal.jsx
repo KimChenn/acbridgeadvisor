@@ -5,25 +5,25 @@ import { useReveal } from "@/hooks/useReveal";
 
 const PARTNERS = [
   {
-    img: "https://media.base44.com/images/public/6a7d70aea68c2c50dc698df1/c86111ba7_generated_3d958451.png",
+    img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80",
     sector: "Financial Services",
     kpi: "150+",
     label: "Strategic Alliances Formed",
   },
   {
-    img: "https://media.base44.com/images/public/6a7d70aea68c2c50dc698df1/332d4d49d_generated_a269c307.png",
+    img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80",
     sector: "Technology & SaaS",
     kpi: "42",
     label: "Cross-Industry Partnerships",
   },
   {
-    img: "https://media.base44.com/images/public/6a7d70aea68c2c50dc698df1/195e74d07_generated_7adb8322.png",
+    img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=80",
     sector: "Manufacturing",
     kpi: "8.4x",
     label: "Avg. Relationship ROI",
   },
   {
-    img: "https://media.base44.com/images/public/6a7d70aea68c2c50dc698df1/4b0a25e67_generated_ce88955e.png",
+    img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=80",
     sector: "Professional Services",
     kpi: "300+",
     label: "Curated Introductions",
